@@ -11,7 +11,13 @@ ion-icon {
   font-size: 24px;
 }
 
+/* 針對錯誤狀態（ion-invalid）下的 ion-item，強制隱藏其底部線條 */
+ion-item.ion-invalid,
 ion-item {
+  --border-style: none;
+  --inner-border-style: none;
+  --border-color: transparent;
+
   &::part(inner) {
     border: unset;
     padding-right: 0;
@@ -21,9 +27,39 @@ ion-item {
   }
 }
 
+.no-bg-btn {
+  /* 1. 蒸發滑鼠懸停（Hover）時的灰色背景 */
+  --background-hover: transparent;
+  --background-hover-opacity: 0;
+
+  /* 2. 蒸發點擊激活（Click/Active）時的暗色背景 */
+  --background-activated: transparent;
+  --background-activated-opacity: 0;
+
+  /* 3. 蒸發鍵盤聚焦（Focused）時的背景 */
+  --background-focused: transparent;
+  --background-focused-opacity: 0;
+
+  /* 4. 徹底關閉點擊時的原生水波紋（Ripple）擴散效果 */
+  --ripple-color: transparent;
+  
+  /* 將最外層殼嘅 cursor 鎖死 */
+  cursor: default;
+
+  /* 🚀 強制按鈕本身靠頂對齊，不參與 ion-item 的整體垂直置中（從而完全忽略 errorText） */
+  align-self: flex-start !important;
+  margin-top: 14px !important; 
+
+  /* 精準控制內部真實 button 零件，將指針變回普通箭頭 */
+  &::part(native) {
+    cursor: default;
+  }
+}
+
 .login-now-btn {
   &::part(native) {
     text-transform: none; /* 強制關閉全大寫 */
+    height: var(--ion-button-height);
   }
 }
 

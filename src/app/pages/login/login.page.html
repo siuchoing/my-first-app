@@ -6,26 +6,39 @@
       </ion-card-header>
 
       <ion-card-content>
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <ion-list>
             <!-- Email Input -->
             <ion-item class="ion-margin-bottom">
+              <ion-button fill="clear" slot="start" class="no-bg-btn">
+                <ion-icon name="mail"></ion-icon>
+              </ion-button>
               <ion-input
                 type="email"
                 aria-label="Enter email"
                 placeholder="Enter email"
                 fill="outline"
+                formControlName="email"
+                aria-label="Enter email"
+                placeholder="Enter email"
+                fill="outline"
+                errorText="Invalid email"
               ></ion-input>
             </ion-item>
 
             <!-- Password Input -->
             <ion-item class="ion-margin-bottom">
+              <ion-button fill="clear" slot="start" class="no-bg-btn">
+                <ion-icon name="lock-closed"></ion-icon>
+              </ion-button>
               <ion-input
                 name="password"
                 fill="outline"
                 type="password"
                 aria-label="Enter password"
                 placeholder="Enter password"
+                formControlName="password"
+                errorText="Password is required (min 6 characters)"
               >
                 <ion-input-password-toggle
                   slot="end"
@@ -40,10 +53,12 @@
 
             <!-- Login Button -->
             <ion-button
+              type="submit"
               expand="block"
               class="login-now-btn ion-margin-top"
               color="dark"
               fill="solid"
+              [disabled]="loginForm.invalid"
             >
               Login Now
             </ion-button>
