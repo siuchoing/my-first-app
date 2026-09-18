@@ -15,6 +15,7 @@ import {
   IonInputPasswordToggle,
 } from '@ionic/angular';
 import { addIcons } from 'ionicons';
+import { logoGoogle, logoApple, logoFacebook } from 'ionicons/icons';
 
 @Component({
   selector: 'app-login',
@@ -38,7 +39,21 @@ import { addIcons } from 'ionicons';
   ],
 })
 export class LoginPage implements OnInit {
-  constructor() {}
+  constructor() {
+    addIcons({ logoGoogle, logoApple, logoFacebook });
+  }
 
   ngOnInit() {}
+    /**
+   * 💡 新增這個自訂函數來接收點擊事件並印出 log
+   * @param platform 傳入點擊的平台名稱 (例如 'Google', 'Apple')
+   */
+  socialLogin(platform: string) {
+    console.log(`[Login] 用戶點擊了 ${platform} 登入按鈕`);
+    
+    // 這裡以後可以寫你的第三方登入邏輯，例如：
+    if (platform === 'Google') {
+      // 執行 Google 登入...
+    }
+  }
 }

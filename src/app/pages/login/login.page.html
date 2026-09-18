@@ -51,6 +51,38 @@
         </form>
 
         <!-- "or" 分隔線區塊 -->
+        <div class="ion-or-divider">or sign in with</div>
+
+        <div class="social-login-container">
+          <!-- 1. Google 登入按鈕 -->
+          <ion-button
+            fill="clear"
+            expand="block"
+            class="modern-social-btn google" (click)="socialLogin('Google')"
+          >
+            <ion-icon name="logo-google"></ion-icon>
+          </ion-button>
+
+          <!-- 2. Apple 登入按鈕 -->
+          <ion-button
+            fill="clear"
+            expand="block"
+            class="modern-social-btn apple" (click)="socialLogin('Apple')"
+          >
+            <ion-icon name="logo-apple"></ion-icon>
+          </ion-button>
+
+          <!-- 3. Facebook 登入按鈕 -->
+          <ion-button
+            fill="clear"
+            expand="block"
+            class="modern-social-btn facebook" (click)="socialLogin('Facebook')"
+          >
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+        </div>
+        
+        <!-- "or" 分隔線區塊 -->
         <div class="ion-or-divider">or</div>
 
         <ion-button

@@ -1,0 +1,26 @@
+.social-login-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  /* 🟢 Google: 讓 logo-google 變成官方最具識別度的彩色/紅橙色 */
+  .modern-social-btn.google {
+    ion-icon {
+      color: #ea4335 !important;
+    }
+  }
+
+  /* 🟢 Facebook: 讓 logo-facebook 變成圖片中經典的深藍品牌色 */
+  .modern-social-btn.facebook {
+    ion-icon {
+      color: #1877f2 !important;
+    }
+  }
+
+  /* 🟢 Apple: 維持簡約的高級純黑色 */
+  .modern-social-btn.apple {
+    ion-icon {
+      color: #000000 !important;
+    }
+  }
+}

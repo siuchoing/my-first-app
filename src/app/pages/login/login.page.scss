@@ -1,4 +1,5 @@
 @import url(or-divider.scss);
+@import url(social-login.scss);
 ion-content {
   /* 修正：防止 Ionic 的滾動輔助機制（Scroll Assist）在鍵盤彈出時動態推擠畫面。 */
   /* 這能確保登入卡片（Flex 居中佈局）在虛擬鍵盤喚醒時，依然穩穩保持在畫面正中央，不發生位置跳動。 */
