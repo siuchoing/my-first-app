@@ -2,12 +2,65 @@
   <div class="flex-center">
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Card Title</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        <ion-card-title>Sign in</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
-        Here's a small text description for the card content. Nothing more, nothing less.
+        <form>
+          <ion-list>
+            <!-- Email Input -->
+            <ion-item class="ion-margin-bottom">
+              <ion-input
+                type="email"
+                aria-label="Enter email"
+                placeholder="Enter email"
+                fill="outline"
+              ></ion-input>
+            </ion-item>
+
+            <!-- Password Input -->
+            <ion-item class="ion-margin-bottom">
+              <ion-input
+                name="password"
+                fill="outline"
+                type="password"
+                aria-label="Enter password"
+                placeholder="Enter password"
+              >
+                <ion-input-password-toggle
+                  slot="end"
+                ></ion-input-password-toggle>
+              </ion-input>
+            </ion-item>
+
+            <!-- Forgot Password Link -->
+            <div class="forgot-password-container ion-text-end">
+              <a href="#" class="forgot-btn">Forgot Password?</a>
+            </div>
+
+            <!-- Login Button -->
+            <ion-button
+              expand="block"
+              class="login-now-btn ion-margin-top"
+              color="dark"
+              fill="solid"
+            >
+              Login Now
+            </ion-button>
+          </ion-list>
+        </form>
+
+        <!-- "or" 分隔線區塊 -->
+        <div class="ion-or-divider">or</div>
+
+        <ion-button
+          fill="clear"
+          expand="block"
+          color="dark"
+          class="create-account-btn"
+        >
+          Create Account
+        </ion-button>
       </ion-card-content>
     </ion-card>
   </div>
