@@ -42,3 +42,116 @@
   align-items: center;
   height: 100%;
 }
+
+// Or Divider
+.ion-or-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize; /* 第一個字母大寫，其他字母小寫 */
+  color: var(--ion-color-step-600, #737373); /* 使用 Ionic 內建的中度灰色 */
+  font-size: 14px;
+  margin: 24px 0; /* 控制分隔線與上下組件的間距 */
+
+  /* 🚀 同時控制左邊 (::before) 和右邊 (::after) 的線條 */
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    /* 使用 Ionic 內建的線條顏色變數（淺灰），切換深色模式時會自動變色 */
+    background-color: var(--ion-color-step-250, #e0e0e0); 
+    transition: background-color 0.3s ease;
+  }
+
+  /* 調整左邊線條與文字的留白間距 */
+  &::before {
+    margin-right: 16px;
+  }
+
+  /* 調整右邊線條與文字的留白間距 */
+  &::after {
+    margin-left: 16px;
+  }
+}
+
+
+ion-content {
+  /* 防止鍵盤彈出時動態推擠畫面，保持置中穩定 */
+  --keyboard-offset: 0px;
+}
+
+ion-icon {
+  color: black;
+  font-size: 24px;
+}
+
+/* 針對錯誤狀態（ion-invalid）下的 ion-item，強制隱藏其底部線條 */
+ion-item.ion-invalid,
+ion-item {
+  --border-style: none;
+  --inner-border-style: none;
+  --border-color: transparent;
+
+  &::part(inner) {
+    border: unset;
+    padding-right: 0;
+  }
+  &::part(native) {
+    padding-left: 0;
+  }
+}
+
+.no-bg-btn {
+  --background-hover: transparent;
+  --background-hover-opacity: 0;
+  --background-activated: transparent;
+  --background-activated-opacity: 0;
+  --background-focused: transparent;
+  --background-focused-opacity: 0;
+  --ripple-color: transparent;
+  
+  cursor: default;
+  align-self: flex-start !important;
+  margin-top: 14px !important; 
+
+  &::part(native) {
+    cursor: default;
+  }
+}
+
+.auth-submit-btn {
+  &::part(native) {
+    text-transform: none; /* 強制關閉全大寫 */
+    height: var(--ion-button-height);
+  }
+}
+
+
+// Social Login
+.social-login-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  /* 🟢 Google: 讓 logo-google 變成官方最具識別度的彩色/紅橙色 */
+  .modern-social-btn.google {
+    ion-icon {
+      color: #ea4335 !important;
+    }
+  }
+
+  /* 🟢 Facebook: 讓 logo-facebook 變成圖片中經典的深藍品牌色 */
+  .modern-social-btn.facebook {
+    ion-icon {
+      color: #1877f2 !important;
+    }
+  }
+
+  /* 🟢 Apple: 維持簡約的高級純黑色 */
+  .modern-social-btn.apple {
+    ion-icon {
+      color: #000000 !important;
+    }
+  }
+}
