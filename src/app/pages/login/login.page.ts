@@ -28,6 +28,7 @@ import {
 import { addIcons } from 'ionicons';
 import { mail, eye, eyeOff, lockClosed, logoGoogle, logoFacebook, logoApple } from 'ionicons/icons';
 
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -49,6 +50,7 @@ import { mail, eye, eyeOff, lockClosed, logoGoogle, logoFacebook, logoApple } fr
     IonIcon,
     IonInputPasswordToggle,
     ReactiveFormsModule,
+    RouterLink
   ],
 })
 export class LoginPage implements OnInit {
